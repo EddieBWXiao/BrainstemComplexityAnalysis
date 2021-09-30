@@ -22,7 +22,7 @@ without highpass filtering
 
 %output:
 %n_subject x n_measure table
-%columns: SD, sample entropy, Lempel-Ziv complexity, fALFF
+%columns: SD, mean square successive difference, sample entropy, Lempel-Ziv complexity, fALFF
 
 
 %}
@@ -63,7 +63,7 @@ without highpass filtering
     
     
     SD = sigm;
-    d = table(SD, SEn, LZCp, fALFF);
+    d = table(SD, mssd, SEn, LZCp, fALFF);
     
 
 end
