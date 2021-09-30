@@ -1,4 +1,4 @@
-function brainstem_measures(nucleus,brainstemBOLDs,highpass_brainstemBOLDs)
+function d = brainstem_measures(nucleus,brainstemBOLDs,highpass_brainstemBOLDs)
 %{
 %based on BOLD signal from different brainstem ROIs, compute complexity
 measures, neuronal variability, and fALFF 
@@ -21,7 +21,7 @@ without highpass filtering
 %IMPORTANT: the two table above should be named as t
 
 %output:
-%n_subject x n_measure table (as file NucleiMetrics_%s.csv)
+%n_subject x n_measure table
 %columns: SD, sample entropy, Lempel-Ziv complexity, fALFF
 
 
@@ -65,8 +65,6 @@ without highpass filtering
     SD = sigm;
     d = table(SD, SEn, LZCp, fALFF);
     
-    %% output
-    writetable(d,sprintf('NucleiMetrics_%s.csv',nucleus))
 
 end
 function outdata = MSSD(x)
